@@ -1,0 +1,20 @@
+.hits {
+  &-navigation {
+    display: flex;
+    align-items: center;
+    &__item {
+      height: 50px;
+      line-height: 48px;
+      flex: 1;
+      text-align: center;
+      border-bottom: 2px solid $alto;
+      margin-right: 30px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.tabs-navigation__item--active {
+        border-bottom-color: $blaze-orange;
+      }
+    }
+  }
+}

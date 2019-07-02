@@ -47,9 +47,23 @@ $(document).ready(function() {
       appendDots: ".banner__dots"
     });
   };
+  let tabs = () => {
+    $(".tabs-navigation__item").click(function() {
+      let tabName = $(this).attr("show-tab");
+      $(this)
+        .addClass("tabs-navigation__item--active")
+        .siblings()
+        .removeClass("tabs-navigation__item--active");
+      $(".tabs__body ." + tabName)
+        .addClass("tab--active")
+        .siblings()
+        .removeClass("tab--active");
+    });
+  };
 
   mainSubnavHover();
   openSearchForm();
   clearSearchForm();
   bannerSlider();
+  tabs();
 });
