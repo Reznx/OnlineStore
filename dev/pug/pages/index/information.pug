@@ -1,0 +1,45 @@
+section.s-information.s-light-bg
+  .container
+    .information
+      .information-item
+        .information-item__header
+          h2.title-section Новости
+        .information-item__body
+          .news-prev__wrapper
+            a(href="").news-prev
+              .news-prev__img(style="background-image:url('static/images/content/news/iphone.jpg')")
+              .news-prev__body
+                span.news-prev__title Статистика: часть владельцев iPhone не знает «имени» своего гаджета
+                span.news-prev__date 02 июля 2019
+            a(href="").news-prev
+              .news-prev__img(style="background-image:url('static/images/content/news/windows.png')")
+              .news-prev__body
+                span.news-prev__title Microsoft объявила о выходе Windows 1.0. Этой ОС уже почти 35 лет
+                span.news-prev__date 03 июля 2019
+        .information-item__footer
+          a(href="").information-item__link Все новости
+
+      .information__item
+        .information-item__header
+          h2.title-section Отзывы
+        .information-item__body
+          .review-prev
+            p.review-prev__text Во второй раз произвел покупку в данном интернет-магазине, на этот раз выбор пал на модель Redmi GO 1 для ребенка. В длинные майские праздники, что удивительно, товар пришел всего за 6 дней и все это приятно порадовало. Несомненно рекомендую данный интернет-магазин друзьям и родственникам для покупки смартфонов.
+            span.review-prev__author Сергей
+        .information-item__footer
+          a(href="").information-item__link Все отзывы
+
+      .information__item
+        .information-item__header
+          h2.title-section Бренды
+        .information-item__body
+          .brands__wrapper
+            ul.brands__list.brands__list--small
+              each brand in [{img:'xiaomi', name: 'Xiaomi'},{img:'apple', name: 'Apple'},{img:'windows', name: 'Windows'},{img:'spacex', name: 'SpaceX'},{img:'nasa', name: 'NASA'}]
+                li.brands__item
+                  a(href="").brand
+                    img(src=`static/images/content/brands/${brand.img}.png`).brand__img
+                    span.brand__name=brand.name
+        .information-item__footer
+          a(href="").information-item__link Все бренды
+          span.information-item__count (9)

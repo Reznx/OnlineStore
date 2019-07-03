@@ -1,0 +1,24 @@
+.news-prev {
+  display: flex;
+  color: $mine-shaft;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &__img {
+    @include size(80px);
+    background-size: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+  &__title {
+    display: block;
+    margin-bottom: 10px;
+  }
+  &__data {
+    color: $oslo-gray;
+    font-size: 12px;
+  }
+}

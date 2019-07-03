@@ -1,10 +1,12 @@
 .product-prev {
+  outline: none;
+  margin: 10px 15px 30px;
   padding: 20px;
   position: relative;
   padding-top: 190px;
   transition: all linear .3s;
   &:hover {
-    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1), 0 2px, 5px, 0 rgba(0, 0, 0, 0.05)
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.05)
   }
   &__header {
     position: absolute;
@@ -14,12 +16,9 @@
     height: 160px;
   }
   &__img {
-    width: 310px;
+    max-height: 160px;
     max-width: 100%;
     outline: none;
-    &--small {
-      width: 250px;
-    }
   }
   &__info {
     display: flex;

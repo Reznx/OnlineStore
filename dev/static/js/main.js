@@ -49,15 +49,27 @@ $(document).ready(function() {
   };
   let tabs = () => {
     $(".tabs-navigation__item").click(function() {
-      let tabName = $(this).attr("show-tab");
+      let tabName = $(this).attr("show-tab"),
+        tabsBody = $(this)
+          .closest(".tabs")
+          .find(".tabs__body")[0],
+        tab = $(tabsBody).find("." + tabName);
       $(this)
         .addClass("tabs-navigation__item--active")
         .siblings()
         .removeClass("tabs-navigation__item--active");
-      $(".tabs__body ." + tabName)
+      $(tab)
         .addClass("tab--active")
         .siblings()
         .removeClass("tab--active");
+      if ($(tabsBody).find(".js-products-line-slider").length) {
+        $(".js-products-line-slider").each(() => {
+          $(this).slick("refresh");
+        });
+        $(".js-product-prev-slider").each(() => {
+          $(this).slick("refresh");
+        });
+      }
     });
   };
   let productPrevSlider = () => {
@@ -67,10 +79,14 @@ $(document).ready(function() {
       dots: false,
       arrows: false,
       appendDots: ".product-prev__colors",
-      // customPaging: function(slider, i) {
-      //   let color = $(slider.$slides[i]).data("color");
-      //   return '<a class="product-prev__color" style="background-color: '+ color +'"></a>';
-      // }
+      customPaging: function(slider, i) {
+        let color = $(slider.$slides[i]).data("color");
+        return (
+          '<a class="product-prev__color" style="background-color: ' +
+          color +
+          '"></a>'
+        );
+      }
     });
   };
   let productLineSlider = () => {

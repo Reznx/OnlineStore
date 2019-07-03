@@ -68,6 +68,11 @@ button {
   box-sizing: border-box;
 }
 
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -76,12 +81,13 @@ button {
 
 .content {
   flex: 1 0 auto;
+  
 }
 
 .container {
   margin: 0 auto;
   max-width: $content-size;
-  padding: 0 15px;
+  padding: 0px 15px;
   width: 100%;
 }
 
