@@ -1,0 +1,80 @@
+
+.preloader {
+  background: none repeat scroll 0 0 #ffffff;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+$blue: #2E86FF;
+$red: #FC3164;
+
+$animtime: 2s;
+$easing: cubic-bezier(.35, 0, .25, 1);
+
+.background-loader {
+  filter: url('#goo');
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.loader {
+  filter: url('#goo');
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: calc(50% - 4rem / 2);
+  left: calc(50% - 4rem / 2);
+  background: $blue;
+  border-radius: 2rem;
+}
+
+.loader-left {
+  animation: rotateLeft $animtime $easing infinite, color $animtime $easing infinite;
+}
+
+.loader-right {
+  animation: rotateRight $animtime $easing infinite, color $animtime $easing infinite;
+}
+
+@keyframes rotateLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: -50% -50%;
+  }
+}
+
+@keyframes rotateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: 150% 150%;
+  }
+}
+
+@keyframes color {
+  0% {
+    background: $blue;
+  }
+
+  50% {
+    background: $red;
+  }
+
+  100% {
+    background: $blue;
+  }
+}

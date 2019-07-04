@@ -104,3 +104,8 @@ $(document).ready(function() {
   productPrevSlider();
   productLineSlider();
 });
+$(window).on('load', function() {
+  $(".loader").fadeOut();
+  $(".preloader").delay(400).fadeOut("slow");
+  $("body").removeClass("fixed");
+});

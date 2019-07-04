@@ -1,1 +1,64 @@
+mixin footerNavLink(link, text)
+  li.footer-nav__item
+    a(href=link).footer-nav__link=text
+
 footer.footer
+  .footer__main
+    .container
+      .footer__navigation
+        .footer__item
+          ul.footer-nav
+            +footerNavLink('','Смартфоны и аксессуары')
+            +footerNavLink('','Компьютеры')
+            +footerNavLink('','Офис')
+            +footerNavLink('','Фото и видео')
+            +footerNavLink('','Аудио')
+            +footerNavLink('','Бытовая техника')
+            +footerNavLink('','TV')
+        .footer__item
+          ul.footer-nav
+            +footerNavLink('','О компании')
+            +footerNavLink('','Доставка')
+            +footerNavLink('','Оплата')
+            +footerNavLink('','Поставщикам')
+            +footerNavLink('','Новости')
+            +footerNavLink('','Отзывы')
+        .footer__item
+          ul.footer-nav
+            +footerNavLink('','Контакты')
+            +footerNavLink('','Вопросы и ответы')
+            +footerNavLink('','Карта сайта')
+
+          span.footer__address Москва пр-т Ленина 18, павильон № 1/2
+      .footer__contacts
+        .footer__phones
+          a(href="tel:88007077518").footer__phone 8 (800) 707-76-18
+          span.footer__text Звонок бесплатный
+          span.footer__text +7 (495) 120-30-30
+        a(href="mailto:nereznik@gmail.com").footer__mail nereznik@gmail.com
+  .footer__socials
+    .container
+      ul.socials
+        li.socials__item
+          a(href="").socials__link
+            img(src="static/images/general/socials/instagram.svg" alt="Иконка Instagram").socials__icon
+            span.socials__name Instagram
+        li.socials__item
+          a(href="").socials__link
+            img(src="static/images/general/socials/facebook.svg" alt="Иконка Facebook").socials__icon
+            span.socials__name Facebook
+        li.socials__item
+          a(href="").socials__link
+            img(src="static/images/general/socials/twitter.svg" alt="Иконка Twitter").socials__icon
+            span.socials__name Twitter
+        li.socials__item
+          a(href="").socials__link
+            img(src="static/images/general/socials/telegram.svg" alt="Иконка Telegram").socials__icon
+            span.socials__name Telegram
+      .yandex-market
+        img(src="static/images/general/socials/yandex.svg" alt="Иконка яндекса").socials__icon
+        a(href="").btn.btn--small.btn--transparent-gray.btn--inline Оставить отзыв
+  .footer__bottom
+    .container
+      span.copyright &copy 2018-2019 &#171Онлайн магазин&#187. Все права защищены. Информация с сайта запрещена к комерческому использованию , законом об авторских правах
+      a(href="").footer__personal-data Политика обработки персональных данных
