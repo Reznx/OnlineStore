@@ -42,7 +42,7 @@ $(document).ready(function() {
       nextArrow: ".banner__navigation--next",
       dots: true,
       customPaging: function(slider, i) {
-        return '<a class="banner__dot"></a>';
+        return '<div class="banner__dot"></div>';
       },
       appendDots: ".banner__dots"
     });
@@ -79,20 +79,66 @@ $(document).ready(function() {
       dots: false,
       arrows: false,
       appendDots: ".product-prev__colors",
-      customPaging: function(slider, i) {
-        let color = $(slider.$slides[i]).data("color");
-        return (
-          '<a class="product-prev__color" style="background-color: ' +
-          color +
-          '"></a>'
-        );
-      }
+      // customPaging: function(slider, i) {
+      //   let color = $(slider.$slides[i]).data("color");
+      //   return (
+      //     '<div class="product-prev__color"></div>'
+      //   );
+      // }
     });
   };
+  // let productPrevSlider = function () {
+  //   $('.js-product-prev__slider').each(function (idx) {
+  //     let carouselId = "carousel" + idx;
+  //     this.closest('.product-prev').id = corouselId;
+  //     $(this).slick({
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //       dots: true,
+  //       arrows: false,
+  //       appendDots: '#' + carouselId + ' .product-prev__colors',
+  //       customPaging: function (slider, i) {
+  //         let color = $(slider.$slides[i]).data('color');
+  //         return `<a class="product-prev__color" style="background-color: ${color}"></a>`
+  //       }
+  //     });
+  //   });
+  // }
   let productLineSlider = () => {
     $(".js-products-line-slider").slick({
       slidesToShow: 4,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1139,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true,
+            appendDots: '.products-line-slider__dots',
+            prevArrow: 'products-line-slider__btn--prev',
+            nextArrow: 'products-line-slider__btn--next',
+            customPaging: function(slider, i) {
+              return '<div class="products-line-slider__dot"></div>';
+            },
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     });
   };
 
