@@ -1,9 +1,6 @@
-mixin headerNavLink(link, text)
-  li.header-nav__item
-            a(href=link).header-nav__link=text
+header.header
+	include header-top.pug
+	include header-main.pug
+	include header-menu.pug
+	include header-mobile.pug
 
-header.header 
-  include header-top
-  include header-main
-  include header-menu
-  include header-mobile

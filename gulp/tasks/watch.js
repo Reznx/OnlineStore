@@ -1,10 +1,10 @@
-module.exports = function () {
-    $.gulp.task('watch', function () {
-        $.gulp.watch('./dev/pug/**/*.pug', $.gulp.series('pug'));
-        $.gulp.watch('./dev/static/styles/**/*.scss', $.gulp.series('styles:dev'));
-        $.gulp.watch(['./dev/static/images/general/**/*.{png,jpg,gif}',
-            './dev/static/images/content/**/*.{png,jpg,gif}'], $.gulp.series('img:dev'));
-        $.gulp.watch('./dev/static/images/svg/*.svg', $.gulp.series('svg'));
-        $.gulp.watch('./dev/static/js/**/*.js', $.gulp.series('js:dev'));
+module.exports = function(){
+    $.gulp.task('watch', function(){
+        $.gulp.watch('src/pug/**/*.pug', $.gulp.series('pug'));
+        $.gulp.watch('src/static/sass/**/*.+(scss|sass)', $.gulp.series('sass:dev'));
+        $.gulp.watch('src/static/js/libs/*.js', $.gulp.series('scripts:lib'));
+        $.gulp.watch('src/static/img/svg/*.svg', $.gulp.series('svg'));
+        $.gulp.watch('src/static/js/main.js', $.gulp.series('scripts'));
+        $.gulp.watch('src/static/img/**/*', $.gulp.series('img:dev', 'svg:copy'));
     });
 };

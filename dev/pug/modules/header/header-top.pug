@@ -1,16 +1,21 @@
 .header__top
-  .container
-    .header__content
-      nav.header__nav.header-nav
-        ul.header-nav__list
-          +headerNavLink('','О компании')
-          +headerNavLink('','Доставка и оплата')
-          +headerNavLink('','Акции')
-          +headerNavLink('','Оптовикам')
-          +headerNavLink('','Новости')
-          +headerNavLink('','Гарантии')
-          +headerNavLink('','Контакты')
-      nav.header__nav.header__nav--right.header-nav
-        ul.header-nav__list
-          +headerNavLink('','Регистрация')
-          +headerNavLink('','Вход')
+	.container
+		.header__content
+			nav.header__nav.inform-nav
+				ul.inform-nav__list
+					each item in header_top
+						li(class=item.mod).inform-nav__item
+							a.inform-nav__link(href=item.link)=item.name
+					li.inform-nav__tablet-toggle
+						+icon('dots','inform-nav__tablet-icon')
+						.inform-subnav
+							.inform-subnav__arrow
+							ul.inform-subnav__list
+								each item in ['Акция', 'Оптовикам', 'Новости', 'Гарантии']
+									li.inform-subnav__item
+										a(href='').inform-subnav__link=item
+			nav.header__nav.header__nav--right.inform-nav
+				ul.inform-nav__list
+					each item in ["Регистрация", "Вход"]
+						li.inform-nav__item
+							a.inform-nav__link(href="#")=item

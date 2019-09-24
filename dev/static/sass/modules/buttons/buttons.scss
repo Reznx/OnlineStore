@@ -1,0 +1,78 @@
+.btn {
+	display: block;
+	text-align: center;
+	height: 40px;
+	width: 100%;
+	padding: 0 20px;
+	font-size: 14px;
+	color: $blazeOrange;
+	font-weight: 600;
+	line-height: 38px;
+	background-color: $white;
+	border: 1px solid $blazeOrange;
+	cursor: pointer;
+	border-radius: 4px;
+	@include shift;
+	&:hover {
+		background-color: $blazeOrange;
+		color: $white;
+	}
+
+	@include shift;
+	&.btn {
+		&--transparent {
+			&-white {
+				color: $white;
+				background-color: transparent;
+				border-color: $white;
+				@include shift;
+				&:hover {
+					color: $blazeOrange;
+					background-color: $white;
+				}
+			}
+			&-grey {
+				color: $osloGray;
+				background-color: transparent;
+				border-color: rgba(38, 38, 38, 0.15);
+				&:hover {
+					background-color: rgba(38, 38, 38, 0.15);
+					color: $white;
+				}
+			}
+		}
+		&--round {
+			border-radius: 20px;
+			-webkit-border-radius: 20px;
+			-moz-border-radius: 20px;
+			-ms-border-radius: 20px;
+			-o-border-radius: 20px;
+		}	
+		&--inline {
+			display: inline-block;
+			width: auto;
+		}
+		&--small {
+			height: 30px;
+			padding: 0 15px;
+			line-height: 28px;
+		}
+		&--big {
+			height: 50px;
+			line-height: 48px;
+		}
+		&--bg {
+			&-orange {
+				background-color: $blazeOrange;
+				color: $white;
+				&:hover {
+					background-color: $white;
+					color: $blazeOrange;
+				}
+			}
+		}
+		&--white-space {
+			white-space: nowrap;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+.catalog-nav {
+	&__list {
+		background-color: $white;
+		position: relative;
+		.catalog-nav__list {
+			display: none;
+			left: 360px;
+			position: absolute;
+			top: 0;
+		}
+	}
+	&__item {
+		width: 360px;
+		&:hover {
+			.catalog-nav__list {
+				display: block;
+			}
+			& > .catalog-nav__link {
+				background-color:$bgTop;
+				color: $blazeOrange;
+			}
+			.catalog-nav__icon {
+				fill: $blazeOrange;
+			}
+		}
+		@include desktop {
+			width: auto;
+		}
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		padding: 10px;
+		font-size: 14px;
+		line-height: 20px;
+		color: $main-shaft;
+	}
+	&__icon {
+		fill: $silver;
+		margin-left: auto;
+		width: 12px;
+		height: 12px;
+	}
+}

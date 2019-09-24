@@ -1,0 +1,160 @@
+@import "mobile.scss";
+
+.header {
+	border-bottom: 1px solid $bgTop;
+	@include desktop {
+		border-bottom: none;
+	}
+	&__nav {
+		&.header__nav {
+			&--right {
+				margin-left: auto;
+			}
+		}
+	}
+	&__content {
+		display: flex;
+		align-items: center;
+		@include desktop {
+			justify-content: space-between;
+		}
+	}
+	&__top {
+		padding: 10px 0;
+		background-color: $bgTop;
+		@include tablets {
+			display: none;
+		}
+	}
+	&__main {
+		padding: 25px 0;
+		@include tablets {
+			display: none;
+		}
+	}
+	&__item {
+		@include desktop {
+			display: none;
+		}
+		&--mobile {
+			@include desktop {
+			display: block;
+			}
+		}
+	}
+	&__menu {
+		@include desktop {
+			display: none;
+		}
+	}
+	&__logo {
+		margin-right: 40px;
+	}
+	&__phones {
+		display: flex;
+		align-items: center;
+		margin-right: 90px;
+		& > * {
+			&:not(:last-child) {
+				margin-right: 30px;
+			}
+		}
+		@include desktop {
+			margin-right: 0;
+		}
+	}
+	&__phone {
+		display: block;
+		font-size: 16px;
+		font-weight: 600;
+		color: $tundora;
+		white-space: nowrap;
+	}
+	&__link {
+		color: $silverChalice;
+		display: block;
+		font-size: 12px;
+		line-height: 1.67;
+		text-decoration: underline;
+	}
+	&__description {
+		color: $silverChalice;
+		display: block;
+		font-size: 12px;
+		line-height: 1.67;
+	}
+	&-address {
+		display: flex;
+		align-items: center;
+		flex: 0 0 190px;
+		width: 190px;
+		& > * {
+			&:not(:last-child) {
+				margin-right: 15px;
+			}
+		}
+		@include desktop {
+			display: none;
+		}
+		&__icon {
+			flex-shrink: 0;
+			fill: $silverChalice;
+			width: 15px;
+			height: 21px;
+		}
+		&__text {
+			font-size: 12px;
+			line-height: 1.67;
+			color: $tundora;	
+		}
+	}
+	&__shop {
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		& > * {
+			&:not(:last-child) {
+				margin-right: 60px;
+			}
+		} 
+	}
+	&-goods {
+		&__price {
+			display: block;
+			font-size: 16px;
+			font-weight: 600;
+			color: $tundora;
+		}
+		&__count {
+			display: block; 
+			color: $silverChalice;
+			font-size: 12px;
+			line-height: 1.67;
+		}
+	}
+	&-busket {
+		display: flex;
+		align-items: center;
+		padding: 10px 20px;
+		border-radius: 20px;
+		background-color: $wildSand;
+		cursor: pointer;
+		& > * {
+			&:not(:last-child) {
+				margin-right: 15px;
+			}
+		}
+		&__icon {
+			width: 20px;
+			height: 20px;
+			fill: $blazeOrange;
+		}
+		&__text {
+			font-weight: 600;
+			color: $tundora;
+		}
+	}
+	&__search {
+		margin-left: auto;
+	}
+}

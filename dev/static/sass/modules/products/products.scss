@@ -1,0 +1,255 @@
+@import "prev.scss";
+@import "line-slider.scss";
+@import "border-line-slide.scss";
+@import "main-slider.scss";
+@import "details.scss";
+@import "review.scss";
+
+.product {
+	color: $tundora;
+	&__header {
+		display: flex;
+		margin-bottom: 50px;
+		& > * {
+			flex: 0 0 calc(50% - 15px);
+			width: calc(50% - 15px);
+			&:last-child,
+			&:first-child {
+				@include desktop {
+					flex: 0 0 100%;
+					width: 100%;
+				}
+			}
+			@include tablets {
+				flex: 0 0 100%;
+				width: 100%;
+			}
+		}
+		@include desktop {
+			flex-wrap: wrap;
+		}
+		@include tablets {
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
+	}
+	&-info {
+		margin-left: 15px;
+		@include tablets {
+			margin-left: 0;
+		}
+		&__header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.title-page {
+				margin-bottom: 0;
+			}
+			@include desktop {
+				margin-bottom: 20px;
+			}
+		}
+		&__body {
+			margin-bottom: 50px;
+			& > * {
+				margin: 30px 0;
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&__footer {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			margin-top: 50px;
+			@include tablets {
+				display: none;
+			}
+		}
+		&__logo {
+			height: 50px;
+			@include tablets {
+				display: none;
+			}
+		}
+		&__row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			@include tablets {
+				flex-wrap: wrap;
+			}
+		}
+		&__text {
+			font-size: 13px;
+			line-height: 30px;
+		}
+		&__link {
+			display: inline-block;
+			font-size: 13px;
+			line-height: 20px;
+			border-bottom: 1px dotted $alto;
+		}
+		&-advantages {
+				display: flex;
+			& > * {
+				flex: 1;
+				&:not(:last-child) {
+					margin-right: 15px;
+				}
+			}
+		}
+		&-advantage {
+			&__header {
+				display: flex;
+				align-items: center;
+				margin-bottom: 15px;
+				& > * {
+					&:not(:last-child) {
+						margin-right: 10px;
+					}
+				}
+			}
+			&__icon {
+				@include size(35px);
+				fill: $tundora;
+			}
+			&__title {
+				font-size: 16px;
+				font-weight: 700;
+				line-height: 20px;
+			}
+		}
+	}
+	&-color {
+		display: flex;
+		& > * {
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
+		.color-list {
+			&__item {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&-available {
+		display: flex;
+		& > * {
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+		}
+		&-view {
+			display: flex;
+			align-items: center;
+			overflow: hidden;
+			& > * {
+				&:not(:last-child) {
+					margin-right: 2px;
+				}
+			}
+			&__item {
+				width: 8px;
+				height: 16px;
+				background-color: $vidaLoca;
+				border-radius: 2px;
+			}
+		}
+		@include tablets {
+			display: none;
+		}
+	}
+	&-actions {
+		display: flex;
+		align-items: center;
+		& > * {
+			&:not(:last-child) {
+				margin-right: 20px;
+				@include desktop {
+					margin-right: 0;
+					margin-bottom: 20px;
+				}
+				@include tablets {
+					margin-right: 20px;
+					margin-bottom: 0;
+				}
+			}
+		}
+		@include desktop {
+			flex-direction: column;
+		}
+		@include tablets {
+			flex-direction: row;
+			flex: 0 0 100%;
+			width: 100%;
+			margin-top: 30px;
+		}
+	}
+	&-price {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		&__old {
+			font-size: 13px;
+			margin-bottom: 10px;
+			color: $osloGray;
+			text-decoration: line-through;
+		}
+		&__current {
+			font-size: 30px;
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+	}
+	&-list {
+		&__item {
+			padding-left: 50px;
+			font-size: 13px;
+			line-height: 20px;
+			position: relative;
+			&:before {
+				content: '';
+				display: block;
+				@include size(4px);
+				border-radius: 50%;
+				background-color: $main-shaft;
+				position: absolute;
+				left: 10px;
+				top: 8px;
+			}
+		}
+		&.product-list--advantage {
+			.product-list {
+				&__item {
+					padding-left: 15px;
+					&:before {
+						background-color: $blazeOrange;
+						left: 0;
+					}
+				}
+			}
+		}
+		&__item {
+			font-size: 13px;
+			line-height: 1.54;
+			padding-left: 50px;
+			position: relative;
+			&::beefore {
+				content: '';
+				@include size(4px);
+				border-radius: 50px;
+				background-color: $main-shaft;
+				display: block;
+				position: absolute;
+				left: 10px;
+				top: 8px;
+			}
+		}
+	}
+}

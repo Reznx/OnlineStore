@@ -1,0 +1,279 @@
+footer {
+	flex: 0 0 auto;
+}
+.footer {
+	background-color: $bgTop;
+	&__main {
+		padding: 40px 0;
+		@include tablets {
+			padding: 20px 0;
+		}
+		.container {
+			display: flex;
+			align-items: flex-start;
+			@include desktop {
+				flex-wrap: wrap;
+			}
+		}
+	}
+	&__navigation {
+		display: flex;
+		align-items: flex-start;
+		& > * {
+			&:not(:last-child) {
+				margin-right: 130px;
+			}
+		}
+		@include desktop {
+			flex: 1;
+			width: 100%;
+			margin-bottom: 30px;
+			justify-content: space-between;
+			& > * {
+				&:not(:last-child) {
+					margin-right: 0px;
+				}
+			}
+		}
+		@include tablets {
+			flex-wrap: wrap;
+		}
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		max-width: 215px;
+		& > * {
+			margin: 15px 0;
+			@include tablets {
+				margin: 5px 0;
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		@include desktop {
+			width: 226px;
+			flex: 0 0 226px;
+		}
+		@include tablets {
+			flex: 0 0 45%;
+			width: 45%;
+			max-width: 100%;
+			margin-bottom: 20px;
+			font-size: 12px;
+		}
+		&.footer__item {
+			&--wide {
+				@include tablets {
+					flex: 1;
+					width: 100%;
+					flex-direction: row;
+				}
+				& > * {
+					@include tablets {
+						flex: 0 0 45%;
+						width: 45%;
+						margin: 0;
+					}
+				}
+			}
+			&--full {
+				@include tablets {
+					flex: 1;
+					width: 100%;
+					flex-direction: row;
+				}
+			}
+			&--text-right {
+				text-align: right;
+			}
+		}
+	}
+	&-nav {
+		& > * {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+		&__link {
+			color: $main-shaft;
+		}
+	}
+	&__address {
+		line-height: 25px;
+	}
+	&__contacts {
+		margin-left: auto;
+		text-align: right;
+		@include desktop {
+			display: none;
+		}
+		&-mobile {
+			display: none;
+			justify-content: space-between;
+			width: 100%;
+			@include desktop {
+				display: flex;
+			}
+			@include tablets {
+				flex-wrap: wrap;
+			}
+			.footer__item {
+				justify-content: space-around;
+				& > * {
+					&:not(:last-child) {
+						margin: 0;
+					}
+				}
+				.yandex-market {
+					display: none;
+					@include desktop {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	&__phones {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 15px;
+		& > * {
+			&:not(:last-child) {
+				margin-bottom: 5px;
+			}
+		}
+	}
+	&__phone {
+		font-size: 20px;
+		line-height: 25px;
+		font-weight: 600;
+		color: $main-shaft;
+		@include tablets {
+			font-size: 16px;
+		}
+	}
+	&__mail {
+		color: $main-shaft;
+	}
+	&__socials {
+		padding-bottom: 30px;
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.yandex-market {
+				@include desktop {
+					display: none;
+				}
+			}
+		}
+	}
+	&__bottom {
+		padding: 20px 0;
+		background-color: rgba(0, 0, 0, 0.05);
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			@include desktop {
+				font-size: 12px;
+				line-height: 20px;
+				align-items: flex-start;
+			}
+			@include tablets {
+				flex-direction: column;
+				align-items: center;
+				padding: 0 13px;
+			}
+			& > * {
+				flex: 0 0 45%;
+				width: 45%;
+				@include tablets {
+					flex: 1;
+					width: 100%;
+					text-align: center;
+					&:not(:last-child) {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+	&__personal-data {
+		text-align: right;
+		color: $osloGray;
+	}
+}
+.socials {
+	display: flex;
+	align-items: center;
+	@include desktop {
+		justify-content: space-between;
+		width: 100%;
+	}
+	& > * {
+		&:not(:last-child) {
+			margin-right: 50px;
+		}
+	}
+	@include tablets {
+		& > * {
+			&:not(:last-child) {
+				margin-right: 0;
+			}
+		}
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		& > * {
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
+
+	}
+	&__icon {
+		width: 30px;
+		height: 30px;
+	}
+	&__name {
+		color: $osloGray;
+		@include tablets {
+			display: none;
+		}
+	}
+}
+.yandex-market {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	@include desktop {
+		margin-left: 0;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	@include tablets {
+		flex-direction: row;
+		align-items: center;
+	}
+	& > * {
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+		@include desktop {
+			margin-right: 0;
+		}
+		@include tablets {
+			margin-right: 10px;
+		}
+	}
+	&__img {
+		width: 98px;
+	}
+}

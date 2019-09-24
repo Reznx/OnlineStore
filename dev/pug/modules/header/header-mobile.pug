@@ -1,18 +1,58 @@
+mixin mainSubnavLink(link,text)
+	li.catalog-nav__item
+		a(href=link).catalog-nav__link
+			span.catalog-nav__text=text
+			+icon('right-arrow','catalog-nav__icon')
+
 .header__mobile
-  .container
-    nav.mobile-nav
-      .mobile-nav__header
-        .mobile-nav__sandwich.sandwich
-          .sandwich__line.sandwich__line--top
-          .sandwich__line.sandwich__line--middle
-          .sandwich__line.sandwich__line--bottom
-        span.mobile-nav__title Каталог товаров
-      .mobile-nav__body
-        ul.mobile-nav__list
-    .search
-      form.search__form
-        .search__input-wrapper
-          input(placeholder="Я хочу купить...").search__input
-          .search__clear
-            +icon('clear','search__clear-icon')
-        input(type="submit" value="Найти").search__btn
+	.container
+		.mobile-menu
+			.mobile-menu__toggle
+				.mobile-menu__sandwich.sandwich
+					.sandwich__line.sandwich__line--top
+					.sandwich__line.sandwich__line--middle
+					.sandwich__line.sandwich__line--bottom
+				span.mobile-menu__title Каталог товаров
+			.mobile-menu__content
+				.mobile-menu__header
+					span.mobile-menu__title Меню
+					.mobile-menu__close
+						+icon('close','mobile-menu__close-icon')
+				.mobile-menu__body
+					nav.catalog-nav
+						ul.catalog-nav__list
+							each item in main_nav
+								+mainSubnavLink(item.link,item.text)
+					nav.inform-nav.inform-nav--col
+						ul.inform-nav__list
+							each text in header_top
+									li.inform-nav__item
+										a(href=text.link).inform-nav__link=text.name
+				.mobile-menu__footer
+					.mobile-menu__phone
+						a(href='tel:84951203034').mobile-menu__phone-number 8 (495) 120-30-34
+						a(href='tel:84951203034').mobile-menu__phone-link Заказать звонок
+					.mobile-menu__phone
+						a(href='tel:88007077518').mobile-menu__phone-number 8 (800) 707-75-18
+						span.mobile-menu__phone-text Звонок бесплатный
+		.mobile__logo.logo
+			img(src="static/img/logo.svg", alt="logo").logo__img
+		.search
+			form.search__form(action="")
+				.search__input-wrapper
+					input(type="text" placeholder="Я хочу купить").search__input
+					.search__clear
+						+icon('close', 'search__clear-icon')
+				input(type="submit" value="Найти").search__btn
+		nav.mobile-user-nav
+			ul.mobile-user-nav__list
+				li.mobile-user-nav__item
+					a.mobile-user-nav__link(href="")
+						+icon('search','mobile-user-nav__icon')
+				li.mobile-user-nav__item
+					a.mobile-user-nav__link(href="")
+						+icon('user','mobile-user-nav__icon')
+				li.mobile-user-nav__item
+					a.mobile-user-nav__link(href="")
+						+icon('busket','mobile-user-nav__icon')
+				

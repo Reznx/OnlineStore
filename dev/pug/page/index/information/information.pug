@@ -1,0 +1,46 @@
+section.s-information.s-light-bg
+	.container
+		.information
+			.information-item
+				.information-item__header
+					h2.title-section Новости
+				.information-item__body
+					.news-prev__wrapper
+						a(href="").news-prev
+							.news-prev__img(style="background-image: url('static/img/visit.jpg'")
+							.news-prev__body
+								span.news-prev__title Выставка в Германии
+								span.news-prev__date 13 июля 2018
+						a(href="").news-prev
+							.news-prev__img(style="background-image: url('static/img/bayk.png'")
+							.news-prev__body
+								span.news-prev__title Новинки в нашем магазине
+								span.news-prev__date 2 июля 2018
+				.information-item__footer
+					a(href="#").information-item__link Все новости
+			.information-item
+				.information-item__header
+					h2.title-section Отзывы
+				.information-item__body
+					.review-prev
+						p.review-prev__text 
+							|Заказывали на вашем сайте в начали мая двухколесный велосипед Puky для дочки. Очень довольны покупкой! Ребенок катается на нем с большим удовольствием! Сам по себе велосипед замечательный и посадка у него низкая и хот педалей мягкий. Порадовала быстрая доставка, курьер привез велосипед в день заказа.
+						span.review-prev__author Антон
+				.information-item__footer
+					a(href="#").information-item__link Все отзывы
+			.information-item.information-item--wide
+				.information-item__header
+					h2.title-section Бренды
+				.information-item__body
+					.brands__wrapper
+						.mobile-scroll-wrapper
+							.mobile-scroll-inner
+								ul.brands__list-small
+									each brand in [{img:'puky',name:'PUKY',link:'brand.html'},{img:'micro',name:'Micro',link:'brand.html'},{img:'hudora',name:'HUDORA',link:'brand.html'},{img:'strider',name:'Strider',link:'brand.html'},{img: 'scool',name:'Scool',link:'brand.html'},{img:'merida',name:'Merida',link:'brand.html'}]
+										li.brands__item
+											a.brand(href=`${brand.link}`)
+												img(src=`static/img/brands/${brand.img}.jpg`, alt="brand logo").brand__img
+												span.brand__name=brand.name	
+				.information-item__footer
+					a(href="brands.html").information-item__link Все бренды
+					span.information-item__count (9)
